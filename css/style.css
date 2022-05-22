@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+/*GENERALE*/
+*{
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*variable couleur*/
+:root{
+  ----bleu: #0065fc;
+  ----bleuclair: #deebff;
+   ----gris: #f2f2ff;
+   ----grisfonce: #d9d9d9;
+  ----noir: #010101;
+  ----blanc: #fff;
+  ----bleuptresclaire: #f3f8ff;
+}
+
+body{
+  margin: 0;
+}
+a{
+  color: inherit; /* Permet de mettre la couleur par defaaut. */ 
+  text-decoration: none;
+}
+
+/*Navbar*/
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+nav a{
+ padding: 2rem;
+}
+
+nav a:hover {
+  border-top: 3px solid  var(----bleu);
+  color: var(----bleu); 
+}
+
+.navHeberg{
+ border-top:3px solid var(----bleu);
+  color: var(----bleu);
+}
+
+.navHeberg:hover{
+  border-top: 3px solid var(----bleu);
+}
+
+.navActiv{
+  border-top: 3px solid transparent;
+}
+#navLogo{ /* en CSS le # c'est pour les id te le "." c'est pour les class*/
+  width: 120px;/* Permet de donne une taille au logo */
+  height: 50px;/* permet de lui donne un hauteure*/ 
+  margin-right: auto;/* permet de mettre le logo a gauche*/
+  margin-bottom: 10px;
+  padding: 0 1rem;
+ }
+.nav2{
+  display: flex;
+}
+.nav2 a:hover{
+ color: var(----bleu); 
+}
+
+
+@media (max-width: 800px){ /*Sur un petit ecran*/ 
+
+  .nav2{
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .navHeberg{
+  border-top: 3px solid  transparent;
+  }
+
+  .navHeberg{
+    border-bottom: 3px solid var(----bleu);
+  }
+  
+  .navActiv{
+    flex-basis: 50%;
+    border-bottom: 3px solid var(----gris);
+  }
+  
+    .nav2 a:hover {
+    border-bottom-color: var(----bleu);
+    color: var(----bleu);
+     border-top: 3px solid transparent;
+    }
+    
+    .recherche01 .boutton {    
+      display: none;
+    } 
+    
+    .fas.fa-search{
+      display: inline;    
+      background-color: inherit;
+    }
+
+  }
+  
+/* Le titre */
+
+ .titreHeber{
+   padding: 0 2rem;
+ }
+
+ .titreHeber h1, 
+ .titreHeber p{          
+   margin-bottom: 1rem;
+ }
+/*Recherche*/
+ .recherche01{
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.recherche01 > * {          
+padding: 1rem 1.5rem;
+font-size: 1.2rem;
+}
+.recherche02{
+  background-color: var(----gris);  
+  border-radius: 1rem 0 0 1rem; /*Permet d'arondire les cotes*/
+}
+
+.recherche01 input{
+ flex-basis: 16rem;    
+ border: 1px solid var(----gris);
+}
+
+.recherche01 input::placeholder{ 
+  font-weight: bold;
+  color: black;
+}
+
+.recherche01 button{          
+  background-color: var(----bleu);
+  color: white;
+  font-weight: bold;
+  border-radius: 0 1rem 1rem 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform 200ms;
+}
+
+.recherche01 button:hover{          
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* .fas.fa-search { 
+ display: none;
+ }*/
+
+ /* filtre */
+
+ .filtr01{
+   display: flex;
+ align-items: center;
+ gap: 1rem 2rem;
+ flex-wrap: wrap;
+ margin-bottom: 1rem;
+ }
+
+ .filtre02 {
+ border: 2px solid var(----gris);
+ border-radius: 2rem;
+ display: flex;
+ align-items: center;
+ transform: all 100ms ease;
+ }
+ .filtre02 .fas{
+   color: blue;
+   background-color: var(----bleuclair);
+   border-radius: 50%;
+   margin: -2px;
+   width: 3rem;
+   height: 3rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+
+.filtre02 span{
+  font-weight: bold;
+  padding: 0 1rem;
+}
+           
+.filtre02:hover{/* permet de cree des animation */
+  background-color: var(----bleuptresclaire);
+  transform: scale(1.02);
+  }
+            
+/* resultat info */
+
+.info{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info .fas{
+  color: var(----bleu);
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(----grisfonce);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hebergement */
+.heberg{
+  display: flex;
+  gap: 1rem;
+}
+
+.heberg > div{
+ border: 1px solid red;
+ background-color: var(----gris);
+ padding: 1rem;
+ border-radius: 1rem;
+}
+
+.ville{
+  flex-basis: 66%;
+}
+
+.ville a{
+  font-weight: bold;
+}
+
+.populaire{
+  flex-basis: 33%;
+}
+
+@media (max-width: 800px){ /*Sur un petit ecran*/ 
+  .heberg{
+    flex-direction: column;
+      }
+      
+      .populaire{
+        order: -1;
+      }
+}
+
+/* Hebergement */
+
+.ville2{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.ville2 div{
+  border: 1px solid blue;
+  flex-basis: calc(33% -1rem);
+}
+
+/* populaire */
+.heberg .heberg2{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.heberg .heberg2 div{
+  border: 1px solid blue;
+}
+
+.heberg{
+  flex-basis: 100%;
+}
+
+@media (max-width: 800px){ 
+  .heberg .populaire{
+    flex-direction: row;
+      }
+ }
+
+ /* hebergement3 */
+.apart{
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 16px #0000002e;
+}
+
+.apart img{
+ border-radius: 1rem 1rem 0 0;
+ height: 10rem;
+}
+
+.apart p,
+.apart h3{
+  margin: 0.5rem;
+}
+
+.blue{
+ color: var(----bleu); 
+ }
+
+ .gris{
+  color: var(----grisfonce);
+ }
